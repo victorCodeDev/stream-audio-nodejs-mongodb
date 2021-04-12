@@ -2,7 +2,9 @@ const { MongoClient } = require('mongodb');
 
 let db;
 
-MongoClient.connect('mongodb://localhost/trackdb', (err, client) => {
+MongoClient.connect('mongodb://localhost/trackdb', {
+    useUnifiedTopology:true,
+}, (err, client) => {
     if (err) {
         console.log(err);
         process.exit(0);
